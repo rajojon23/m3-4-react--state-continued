@@ -27,33 +27,8 @@ const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);//init
 
 let books = data.books;
 
-let keySelected = '';
+let keySelected = '';//title of the book selected, used for key events only 
 
-
-// 
-// useEffect(() => {
-// 	
-// 		setIsMounted(true);
-// 
-// 
-// 			if(isMounted){
-// 				books.forEach((book)=>{
-// 
-// 					if(book.title.indexOf(search) > -1){
-// 						result.push(book.title);
-// 					}
-// 
-// 
-// 
-// 				});	
-// 			}
-// 
-// 	console.log("got result: " , result);
-// 	console.log("got search: " , search);
-// 
-// 	
-// 	
-// }, [search, result]);
 
 const handleTyped = (event) =>{
 		
@@ -95,19 +70,11 @@ const handleTyped = (event) =>{
 const handleKeyDown = (event) =>{
 		
 
-
-	//reset the selection state after each typing (prevents any preselected suggestion component)	
-	//setSelectedSuggestionIndex(-1);	
-
 	let maxIndex = result.length-1;
 	let minIndex = 0;
 
 	
 	let currIndex = selectedSuggestionIndex;
-
-	console.log('max index',maxIndex);
-	console.log('min index',minIndex);
-	console.log('current index',currIndex);
 
 	//the selection will loop on 'key' navigationn
 	//if user presses on arrowup but the currently selected 
@@ -157,18 +124,11 @@ const handleOnClick = (event) =>{
 		
 	setSelectedSuggestionIndex(-1);	//reset the selection state after each typing (prevents any preselected suggestion component)
 
-	console.log("handleonClick called");
 	alert(`Selected:  ${event.target.dataset.bookTitle}`);
 }
 
 
-const handleOnSelect = (title) =>{
-	
-	console.log('handleOnSelect called');
-
-
-	
-	console.log("Received title", title);
+const handleOnSelect = (title) =>{//will be called by the Suggestion component, to give a value to keySelected
 
 	keySelected = title;
 
@@ -193,10 +153,7 @@ const handleOnSelectEnter = () =>{
 
 
 
-const clearInput = () =>{//this is a function that is implemented on an element inside the Typeahead component
-
-		// console.log("clearInput called");
-		// console.log("value of input",textInput.current.value );
+const clearInput = () =>{//this is a function that is implemented on an element inside the Typeahead component, linked to the 'Clear' button 
 			
 		textInput.current.value = "";
 
