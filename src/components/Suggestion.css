@@ -1,0 +1,26 @@
+
+
+.suggestion{
+	/*border: 1px solid green;*/
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+
+
+.suggested, .suggestion:hover{
+	background-color: #FFF9C4;
+}
+
+
+.category{
+	color: #CE93D8;
+	font-style: italic;
+}
+
+
+.category > .in{
+	color:#D1C4E9;
+}

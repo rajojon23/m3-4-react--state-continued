@@ -1,0 +1,7 @@
+.suggestion_list {
+	-webkit-box-shadow: 5px 5px 15px 5px #A5A5A5; 
+	box-shadow: 5px 5px 15px 5px #A5A5A5;
+	margin: 5px;
+	width: 400px;
+	padding-top: 5px;
+}
