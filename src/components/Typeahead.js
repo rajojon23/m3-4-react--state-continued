@@ -13,11 +13,11 @@ const Typeahead = (props) => {
 	let clearInput = props.clearInput;
 
   return (
-    <>
+    <div className="search_container">
     	<input className="input_clear" type="text" name="" id="" onChange={handleTyped} onKeyDown={handleKeyDown} ref={textInput}/>
     	<Button   textInput={textInput} clearInput={clearInput}>Clear</Button>
 
-    </>
+    </div>
   );
 };
 

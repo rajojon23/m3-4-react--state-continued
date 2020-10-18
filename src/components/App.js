@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import data from '../data';
 
@@ -13,7 +13,6 @@ import Suggestion from './Suggestion';
 import './App.css';
 
 
-let count_call = 0;
 
 let textInput = React.createRef();//ref created inside App component to get value of input inside Typehead component
 
@@ -33,17 +32,13 @@ let keySelected = '';//title of the book selected, used for key events only
 const handleTyped = (event) =>{
 		
 		
-		// console.log("coun_call: " , count_call);
-		
+
 	
 		let search_term = (event.target.value).toLowerCase();
 
 		setSearch(search_term);
 		result = [];
-		// console.log(`display result for ${event.target.value}`);
 
-		// console.log('search_term:', search_term);
-		// console.log('search:', search);
 
 
 		if(search_term.length >= 2){
@@ -51,7 +46,6 @@ const handleTyped = (event) =>{
 				
 				let book_title= book.title.toLowerCase();
 				if(book_title.indexOf(search_term) > -1 ){
-					// result.push(book.title);
 					result.push(book);
 				}
 
@@ -62,7 +56,6 @@ const handleTyped = (event) =>{
 
 
 		
-		// console.log("result found", result);
 		setResult(result);	
 		
 }
